@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// subverts submit button for ajax request.
+$(function () {
+    $("#log").submit(function (e) {
+        e.preventDefault();  //prevent normal form submission
 
-// Write your JavaScript code.
+        var actionUrl = $(this).attr("Login");  // get the form action value
+        $.post(actionUrl, $(this).serialize(), function (res) {
+            //res is the response coming from our ajax call. Use this to update DOM
+            $("#viewB").html(res);
+        });
+    });
+
+});

@@ -30,8 +30,12 @@ namespace Mordenkainen2
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
+            //not sure I needed this
+            services.AddDistributedMemoryCache();
+            //adds a timeout for the session, so it won't persist indefinitely?
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -50,6 +54,9 @@ namespace Mordenkainen2
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //add this so I could use session variables, though this seems to be becoming an antiquated way
+            //of doing things.
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

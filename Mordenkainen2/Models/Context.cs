@@ -31,7 +31,19 @@ namespace Mordenkainen2.Models
             optionsBuilder.UseSqlServer(
                 @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
         }
+    }
 
+    public class LoginRegisterContext : DbContext
+    {
+        public DbSet<UserInformation> UserInformation { get; set; }
+        public DbSet<UserInsert> UserInsert { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //change example server location to actual db path.
+            optionsBuilder.UseSqlServer(
+                @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
+        }
     }
 
     public class UserInformation
@@ -42,6 +54,12 @@ namespace Mordenkainen2.Models
 
         /*Get all related sheets*/
         public IEnumerable<UserInformation> Sheets { get; set; }
+    }
+    [Table("UserInformation")]
+    public class UserInsert
+    {
+        public string UserEmail { get; set; }
+        public string UserPass { get; set; }
     }
 
     public class Class
