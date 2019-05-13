@@ -29,3 +29,4 @@ E:\VisualStudioProjects\Mordenkainen2\Mordenkainen2\obj\Debug\netcoreapp2.1\Mord
 E:\VisualStudioProjects\Mordenkainen2\Mordenkainen2\obj\Debug\netcoreapp2.1\Mordenkainen2.pdb
 E:\VisualStudioProjects\Mordenkainen2\Mordenkainen2\obj\Debug\netcoreapp2.1\Mordenkainen2.csproj.CopyComplete
 E:\VisualStudioProjects\Mordenkainen2\Mordenkainen2\obj\Debug\netcoreapp2.1\Razor\Views\Home\CharacterCreation.g.cshtml.cs
+E:\VisualStudioProjects\Mordenkainen2\Mordenkainen2\obj\Debug\netcoreapp2.1\Razor\Views\Home\CharacterSheet.g.cshtml.cs

@@ -58,7 +58,8 @@ namespace Mordenkainen2.Controllers
                 return BadRequest();
         }
 
-        [HttpGet]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         //have to pass in the matching ViewModel(class) used in the form.
         public IActionResult Login(LayoutViewModel login)
         {
@@ -73,6 +74,59 @@ namespace Mordenkainen2.Controllers
             }
             else
                 return BadRequest();
+        }
+
+        [HttpPost]
+        //takes objects from the DOM and updates the database
+        //should i just create an interface and inherit all the view models i need from it?
+        public IActionResult UpdateCharacterSheet(CharacterSheetViewModel sheet)
+        {
+
+            if (sheet != null)
+            {
+                if (EFQueries.UpdateCharacter(sheet) == true)
+                    return Ok("save successful");
+                else
+                    return BadRequest("not saved");
+            }
+            else
+                return BadRequest("not saved");
+        }
+
+        //update one singular sheet property.
+        [HttpPost]
+        public IActionResult UpdateCharacterProperty(string names, object value)
+        {
+            HttpContext.Session.SetInt32("_CharacterID", 1);
+            int? selectCharacterID = HttpContext.Session.GetInt32("_CharacterID");
+            if (value != null)
+            {
+                try {
+                    EFQueries.UpdateCharacterProperty(names, value,selectCharacterID);
+                    return Ok();
+                }
+                catch {
+                    return BadRequest();
+                }
+            }
+            else
+                return BadRequest("not saved");
+        }
+
+        public IActionResult CreateCharater(CharacterSheetViewModel sheet)
+        {
+            return Ok();//place holder
+        }
+
+        public IActionResult GetCharacterSelection(int UserID)
+        {
+            return Ok();//place holder
+        }
+
+        public IActionResult SetCharacterSelection(int CharID)
+        {
+            HttpContext.Session.SetInt32("_CharacterID", CharID);
+            return Ok();
         }
     }
 }

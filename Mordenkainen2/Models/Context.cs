@@ -29,7 +29,7 @@ namespace Mordenkainen2.Models
         {
             //change example server location to actual db path.
             optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
+                "Server=LAPTOP-A1RJ3U46\\SQLEXPRESS;Database=Morden;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
     }
 
@@ -42,7 +42,7 @@ namespace Mordenkainen2.Models
         {
             //change example server location to actual db path.
             optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\mssqllocaldb;Database=Blogging;Integrated Security=True");
+                "Server=LAPTOP-A1RJ3U46\\SQLEXPRESS;Database=Morden;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
     }
 

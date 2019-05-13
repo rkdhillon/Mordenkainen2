@@ -20,7 +20,7 @@
     @model LayoutViewModel
     <div class="container-fluid">
         <div class="row">
-            <form asp-controller="Home" asp-action="Login" method="get">
+            <form id="log" asp-controller="Home" asp-action="Login" method="post">
                 <label asp-for="LoginModel.Email" class="control-label"></label>
                 <input asp-for="LoginModel.Email" class="form-control" />
                 <label asp-for="LoginModel.Password" class="control-label"></label>
@@ -29,7 +29,7 @@
             </form>
         </div>
         <div class="row">
-            <form asp-controller="Home" asp-action="Register" method="post">
+            <form id="reg" asp-controller="Home" asp-action="Register" method="post">
                 <label asp-for="RegisterModel.Email" class="control-label"></label>
                 <input asp-for="RegisterModel.Email" class="form-control" />
                 <label asp-for="RegisterModel.Password" class="control-label"></label>

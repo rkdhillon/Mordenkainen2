@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Mordenkainen2.Models;
 using System.Data.SqlClient;
+using System.Reflection;
+
 namespace Mordenkainen2.Models
 {
     public class EFQueries
@@ -102,10 +104,75 @@ namespace Mordenkainen2.Models
                 return false;
             }
         }
-        //I probably should make someething elegant that detects what's changed and updated it individually
-        public bool UpdateCharacter(CharacterSheetViewModel sheet)
+
+        //updates and saves a single property for a single model.
+        public static void UpdateCharacterProperty(string ModelAndProp, object value, int? selectCharacterID)
         {
-            return true;
+            //get context. The using statement ensures resources are disposed of when they go out of scope.
+            using (var context = new Context())
+            {
+                //split the string coming from the DOM into the model type name and property name
+                string[] names = ModelAndProp.Split(".");
+                //switch on model type name
+                switch (names[0])
+                {
+                    case "CharacterSheet":
+                        //moved to the helper and into a method to reduce code.
+                        Helper.ModifySheetProperty(typeof(CharacterSheet), context, names, value, selectCharacterID);
+                        break;
+                    case "SavingThrows":
+                        Helper.ModifySheetProperty(typeof(SavingThrows), context, names, value, selectCharacterID);
+                        break;
+                    case "Skills":
+                        Helper.ModifySheetProperty(typeof(Skills), context, names, value, selectCharacterID);
+                        break;
+                    case "Money":
+                        Helper.ModifySheetProperty(typeof(Money), context, names, value, selectCharacterID);
+                        break;
+                    case "Proficiencies":
+                        Helper.ModifySheetProperty(typeof(Proficiencies), context, names, value, selectCharacterID);
+                        break;
+                    case "Appearance":
+                        Helper.ModifySheetProperty(typeof(Appearance), context, names, value, selectCharacterID);
+                        break;
+                    case "Spellbook":
+                        Helper.ModifySheetProperty(typeof(Spellbook), context, names, value, selectCharacterID);
+                        break;
+                    default:
+                        break;
+                }
+                context.SaveChangesAsync();
+            }
+        }
+
+        //I probably should make someething elegant that detects what's changed and updated it individually
+        //may be a dead end
+        public static bool UpdateCharacter(CharacterSheetViewModel sheet)
+        {
+            //for each property of this view model, which is a model object in itself
+            //try to update that object if not null
+            foreach (var item in sheet.GetType().GetProperties())
+            {
+                try
+                {
+                    //check that property/Model isn't null
+                    if (item is null)
+                        return false;
+                    using (var context = new Context())
+                    {
+
+                        //see helper class
+                        Helper.SaveSheetProperty(item, context);
+                        context.SaveChanges();
+                        return true;
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }
