@@ -38,19 +38,21 @@ $(function () {
     });
 });
 
-//Fires when you select a character
-$("#characterSelect").change(function (e) {
-    //set the controller action
-    var actionUrl = "GetSelectedCharacter";
-    //get value of of selected option
-    var data = e.val();
-    //post response that will send the value of the selected option
-    $.post(actionUrl, data ,function (res) {
-        //res is the response coming from our ajax call. Use this to update DOM
-        //update all character sheet values.
-        $("#viewB").html(res);
-    });
-});
+//Fires when you select a character. Moved to View
+//$("#characterSelect").change(function (e) {
+//    //set the controller action
+//    var actionUrl = "GetSelectedCharacter";
+//    //get value of of selected option
+//    //var data = e.val();
+//    var data = e.target.value;
+//    //post response that will send the value of the selected option
+//    $.post(actionUrl, data ,function (res) {
+//        //res is the response coming from our ajax call. Use this to update DOM
+//        //update all character sheet values.
+//        return res;
+//    });
+//});
+
 
 //on load retreive character selection
 $(function () {

@@ -1,7 +1,9 @@
 ﻿@model CharacterSheetViewModel
 @{
     ViewData["Title"] = "CharacterSheet";
+    CharacterSheetViewModel character = new CharacterSheetViewModel();
 }
+
 
 <!--Note to self. Use inputs, all with the same id, then add an onchange event listener in javascript,
     so that when any of the inputs change I can send it off in an https request. Then maybe put some sort of 
@@ -17,3 +19,12 @@
     <label asp-for="CharacterSheet.CharLevel">Character Level</label>
     <input asp-for="CharacterSheet.CharLevel" class="sheetObj" />
 </div>
+<script>
+$("#characterSelect").change(function (e) {
+    var actionUrl = "GetSelectedCharacter";
+    var data = e.target.value;
+    $.post(actionUrl, { charID: data } ,function (res) {
+        @character = res;
+    });
+});
+</script>

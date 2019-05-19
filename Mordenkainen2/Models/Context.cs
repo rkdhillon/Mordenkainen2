@@ -136,16 +136,13 @@ namespace Mordenkainen2.Models
         public int CharacterID { get; set; }
         public int UserID { get; set; }
         public string CharacterName { get; set; }
-        public Class Class { get; set; }
-        public SubClass Subclass { get; set; }
+        public string Class { get; set; }
+        public string Subclass { get; set; }
         public byte CharLevel { get; set; }
-        /*For referenced tables*/
-        [Column("Background")]
-        public int BackgoundID { get; set; }
+        public int BackgroundID { get; set; }
         public Background Background { get; set; }
         public string PlayerName { get; set; }
         public string Race { get; set; }
-        [Column("Alignment")]
         public int AlignmentID { get; set; }
         public Alignment Alignment { get; set; }
         public int Experience { get; set; }
@@ -182,10 +179,6 @@ namespace Mordenkainen2.Models
         public Spellbook Spellbook { get; set; }
         public Proficiencies Proficiencies { get; set; }
 
-
-
-
-
         //still don't quite understand why this is needed.
         //Indicates where Foreign Key is from I think
         public UserInformation UserInformation { get; set; }
@@ -196,24 +189,24 @@ namespace Mordenkainen2.Models
         public int SkillsID { get; set; }
         [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
-        public int Acrobatics { get; set; }
-        public int AnimalHandling { get; set; }
-        public int Arcana { get; set; }
-        public int Athletics { get; set; }
-        public int Deception { get; set; }
-        public int History { get; set; }
-        public int Insight { get; set; }
-        public int Intimidation { get; set; }
-        public int Investigation { get; set; }
-        public int Medicine { get; set; }
-        public int Nature { get; set; }
-        public int Perception { get; set; }
-        public int Performance { get; set; }
-        public int Persuasion { get; set; }
-        public int Religion { get; set; }
-        public int Sleight { get; set; }
-        public int Stealth { get; set; }
-        public int Survival { get; set; }
+        public byte Acrobatics { get; set; }
+        public byte AnimalHandling { get; set; }
+        public byte Arcana { get; set; }
+        public byte Athletics { get; set; }
+        public byte Deception { get; set; }
+        public byte History { get; set; }
+        public byte Insight { get; set; }
+        public byte Intimidation { get; set; }
+        public byte Investigation { get; set; }
+        public byte Medicine { get; set; }
+        public byte Nature { get; set; }
+        public byte Perception { get; set; }
+        public byte Performance { get; set; }
+        public byte Persuasion { get; set; }
+        public byte Religion { get; set; }
+        public byte Sleight { get; set; }
+        public byte Stealth { get; set; }
+        public byte Survival { get; set; }
 
         public CharacterSheet CharacterSheet { get; set; }
     }
@@ -248,7 +241,7 @@ namespace Mordenkainen2.Models
         public int CharacterID { get; set; }
         public int Copper { get; set; }
         public int Silver { get; set; }
-        public int Electum { get; set; }
+        public int Electrum { get; set; }
         public int Gold { get; set; }
         public int Platinum { get; set; }
 
