@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mordenkainen2.Models
 {
@@ -48,6 +49,7 @@ namespace Mordenkainen2.Models
 
     public class UserInformation
     {
+        [Key]
         public int UserID { get; set; }
         public string UserEmail { get; set; }
         public string UserPass { get; set; }
@@ -64,6 +66,7 @@ namespace Mordenkainen2.Models
 
     public class Class
     {
+        [Key]
         public int ClassID { get; set; }
         public string ClassName { get; set; }
         public string ClassDesc { get; set; }
@@ -73,6 +76,7 @@ namespace Mordenkainen2.Models
 
     public class SubClass
     {
+        [Key]
         public int SubClassID { get; set; }
         public string SubClassName { get; set; }
         public string SubClassDesc { get; set; }
@@ -82,14 +86,20 @@ namespace Mordenkainen2.Models
 
     public class Background
     {
+        [Key]
         public int BackgroundID { get; set; }
+        public string BackgroundName { get; set; }
         public string BackgroundDesc { get; set; }
+        public string SkillProf { get; set; }
+        public string Languages { get; set; }
+        public string Equipment { get; set; }
 
         ICollection<CharacterSheet> CharacterSheets { get; set; }
     }
 
     public class Race
     {
+        [Key]
         public int RaceID { get; set; }
         public string RaceName { get; set; }
         public string RaceDesc { get; set; }
@@ -98,6 +108,7 @@ namespace Mordenkainen2.Models
 
     public class Alignment
     {
+        [Key]
         public int AlignmentID { get; set; }
         public string AlignmentType { get; set; }
 
@@ -106,6 +117,7 @@ namespace Mordenkainen2.Models
 
     public class SpellCompendium
     {
+        [Key]
         public int SpellID { get; set; }
         public string SpellName { get; set; }
         public string SpellSchool { get; set; }
@@ -120,6 +132,7 @@ namespace Mordenkainen2.Models
 
     public class CharacterSheet
     {
+        [Key]
         public int CharacterID { get; set; }
         public int UserID { get; set; }
         public string CharacterName { get; set; }
@@ -179,7 +192,9 @@ namespace Mordenkainen2.Models
     }
     public class Skills
     {
+        [Key]
         public int SkillsID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public int Acrobatics { get; set; }
         public int AnimalHandling { get; set; }
@@ -205,7 +220,9 @@ namespace Mordenkainen2.Models
 
     public class SavingThrows
     {
+        [Key]
         public int SavingThrowsID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public byte StrSave { get; set; }
         public bool StrSaveProf { get; set; }
@@ -225,7 +242,9 @@ namespace Mordenkainen2.Models
 
     public class Money
     {
+        [Key]
         public int MoneyID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public int Copper { get; set; }
         public int Silver { get; set; }
@@ -238,7 +257,9 @@ namespace Mordenkainen2.Models
 
     public class Appearance
     {
+        [Key]
         public int AppearanceID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public int Age { get; set; }
         public string Height { get; set; }
@@ -254,7 +275,9 @@ namespace Mordenkainen2.Models
 
     public class Spellbook
     {
+        [Key]
         public int SpellBookID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public string CastingClass { get; set; }
         public int CastingAbility { get; set; }
@@ -277,7 +300,9 @@ namespace Mordenkainen2.Models
 
     public class Proficiencies
     {
+        [Key]
         public int ProfID { get; set; }
+        [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
         public string Armor { get; set; }
         public string Weapons { get; set; }

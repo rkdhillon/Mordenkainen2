@@ -52,19 +52,55 @@ namespace Mordenkainen2.Models
         }
 
         //gets the selected character and hopefully all related tables. might need to use include
-        public CharacterSheet GetCharacter(int userID, int charID)
+        public static CharacterSheetViewModel GetCharacter(int userID, int charID)
         {
+            //couldn't think of a better way than to make multiple calls at the moment.
             using (var context = new Context())
             {
-                var sheet = context.CharacterSheet
+                //make one query that hopefully gets all the objects I need.
+                CharacterSheet sheet = context.CharacterSheet
                     .Where(d => d.UserID == userID && d.CharacterID == charID)
+                    .Include(d => d.SavingThrows)
+                    .Include(d => d.Skills)
+                    .Include(d => d.Money)
+                    .Include(d => d.Proficiencies)
+                    .Include(d => d.Appearance)
+                    .Include(d => d.Spellbook)
                     .First();
-                return sheet;
+
+                //first idea
+                //SavingThrows saving = context.SavingThrows
+                //    .Where(d => d.CharacterID == charID).First();
+                //Skills skills = context.Skills
+                //    .Where(d => d.CharacterID == charID).First();
+                //Money money = context.Money
+                //    .Where(d => d.CharacterID == charID).First();
+                //Proficiencies proficiencies = context.Proficiencies
+                //    .Where(d => d.CharacterID == charID).First();
+                //Appearance appearance = context.Appearance
+                //    .Where(d => d.CharacterID == charID).First();
+                //Spellbook spellbook = context.Spellbook
+                //    .Where(d => d.CharacterID == charID).First();
+        
+               
+                //creats the character sheet view model
+                CharacterSheetViewModel character = new CharacterSheetViewModel()
+                {
+                    CharacterSheet = sheet,
+                    SavingThrows = sheet.SavingThrows,
+                    Skills = sheet.Skills,
+                    Money = sheet.Money,
+                    Proficiencies = sheet.Proficiencies,
+                    Appearance = sheet.Appearance,
+                    Spellbook = sheet.Spellbook
+                };
+
+                return character;
             }
         }
 
         //reteives list of users characters
-        public List<CharacterSelectViewModel> GetSelection(int userID)
+        public static List<CharacterSelectViewModel> GetSelection(int userID)
         {
             using (var context = new Context())
             {

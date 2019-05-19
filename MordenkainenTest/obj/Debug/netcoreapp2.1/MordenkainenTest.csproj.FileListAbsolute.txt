@@ -1,0 +1,12 @@
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\MordenkainenTest.deps.json
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\MordenkainenTest.runtimeconfig.json
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\MordenkainenTest.runtimeconfig.dev.json
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\bin\Debug\netcoreapp2.1\MordenkainenTest.dll
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\obj\Debug\netcoreapp2.1\MordenkainenTest.csprojAssemblyReference.cache
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\obj\Debug\netcoreapp2.1\MordenkainenTest.csproj.CoreCompileInputs.cache
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\obj\Debug\netcoreapp2.1\MordenkainenTest.AssemblyInfoInputs.cache
+E:\VisualStudioProjects\Mordenkainen2\MordenkainenTest\obj\Debug\netcoreapp2.1\MordenkainenTest.AssemblyInfo.cs

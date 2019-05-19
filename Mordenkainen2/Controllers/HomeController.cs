@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mordenkainen2.Models;
+using Newtonsoft.Json;
 
 
 namespace Mordenkainen2.Controllers
@@ -76,6 +77,44 @@ namespace Mordenkainen2.Controllers
                 return BadRequest();
         }
 
+        public IActionResult CreateCharater(CharacterSheetViewModel sheet)
+        {
+            return Ok();//place holder
+        }
+
+        [HttpGet]
+        public JsonResult GetCharacterSelection()
+        {
+            //get session variable from Session
+            //int? userID = HttpContext.Session.GetInt32("_UserID");
+            int? userID = 1;//for test.
+            //check if user is logged in.
+            if (userID == null)
+                //if not, return null cause there are no characters to send back.
+                return Json(null);
+            //get list of objects
+            List<CharacterSelectViewModel> characters = EFQueries.GetSelection((int)userID);
+            //return list as a json object
+            return Json(characters);
+        }
+
+        [HttpPost]
+        public IActionResult GetSelectedCharacter(int? charID)
+        {
+            //if character is null return bad request
+            if (charID == null)
+                return BadRequest();
+            //set character selection
+            HttpContext.Session.SetInt32("_CharacterID", (int)charID);
+            //get userid from session
+            //int userID = (int)HttpContext.Session.GetInt32("_UserID");
+            int userID = 1;//for testing
+            //get CharacterSheetViewModel with a query
+            CharacterSheetViewModel character = EFQueries.GetCharacter(userID, (int)charID);
+            //return object and the OK http code
+            return Ok(character);
+        }
+
         [HttpPost]
         //takes objects from the DOM and updates the database
         //should i just create an interface and inherit all the view models i need from it?
@@ -113,20 +152,6 @@ namespace Mordenkainen2.Controllers
                 return BadRequest("not saved");
         }
 
-        public IActionResult CreateCharater(CharacterSheetViewModel sheet)
-        {
-            return Ok();//place holder
-        }
-
-        public IActionResult GetCharacterSelection(int UserID)
-        {
-            return Ok();//place holder
-        }
-
-        public IActionResult SetCharacterSelection(int CharID)
-        {
-            HttpContext.Session.SetInt32("_CharacterID", CharID);
-            return Ok();
-        }
+      
     }
 }
