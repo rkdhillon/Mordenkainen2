@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/charactercreationstyle.css">
+
+<div class="header">
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+ <div class="w3-bar w3-white w3-card" id="myNavbar">
+ &nbsp  <img src="images/pic.png" width = "100" length ="100"  style="margin:10px 0px">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+       <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>  ABOUT</a>
+      <a href="charactercreation.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> CHARACTER CREATION</a>
+      <a href="charactersheet.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CHARACTER SHEET</a>
+      <a href="contactus.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
+      <a href="login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-red w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>  ABOUT</a>
+      <a href="charactercreation.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> CHARACTER CREATION</a>
+      <a href="charactersheet.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CHARACTER SHEET</a>
+      <a href="contactus.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
+      <a href="login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
+</nav>
+  
+</header>
+</div>
+<div>
+<body>
+<br>
+<div style="padding-left:20px">
+</div>
+
+<div class="container">
+  <h2>Create Character</h2>
+  
+  <div id="myCarousel" class="carousel slide" data-interval="500">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li class="item1 active"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+         <section class="charname">
+      <ul>  <li><label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" />
+    
+
+
+    <section class="misc">
+    
+        <li>
+          <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" />
+        </li>
+        <li>
+          <label for="background">Background</label><input name="background" placeholder="Acolyte" />
+        </li>
+        <li>
+          <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface">
+        </li>
+        <li>
+          <label for="race">Race</label><input name="race" placeholder="Half-elf" />
+        </li>
+        <li>
+          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+        </li>
+        <li>
+          <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
+        </li>
+      </ul>
+    
+      </div>
+
+      <div class="item">
+
+         <section class="attributes">
+  <li>    <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" />
+    
+</li>
+           
+              <div class="score">
+           <li>     <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" />
+              </li></div>
+              <div class="score">
+                <li><label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" />
+              </li></div>
+           <div class="score">
+            <li>    <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" />
+              </li></div>
+          <div class="score">
+               <li> <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" />
+              </li></div>
+<div class="score">
+                <li><label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" />
+             </li> </div>
+    </section>
+      </div>
+    <!--  -->
+<div class="item">
+
+        <section class="attributes">
+        <div class="label">
+              Saving Throws
+           
+          </div>
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label><input name="Acrobatics" placeholder="+0" type="text" /><input name="Acrobatics-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label><input name="Animal Handling" placeholder="+0" type="text" /><input name="Animal Handling-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Arcana">Arcana <span class="skill">(Int)</span></label><input name="Arcana" placeholder="+0" type="text" /><input name="Arcana-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Athletics">Athletics <span class="skill">(Str)</span></label><input name="Athletics" placeholder="+0" type="text" /><input name="Athletics-prof" type="checkbox" />
+              </li>
+             
+          </div>
+        </div>
+      </section>
+   <div class="item">
+
+        <section class="attributes">
+        <div class="label">
+              Saving Throws
+           
+          </div>
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Deception">Deception <span class="skill">(Cha)</span></label><input name="Deception" placeholder="+0" type="text" /><input name="Deception-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="History">History <span class="skill">(Int)</span></label><input name="History" placeholder="+0" type="text" /><input name="History-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Insight">Insight <span class="skill">(Wis)</span></label><input name="Insight" placeholder="+0" type="text" /><input name="Insight-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label><input name="Intimidation" placeholder="+0" type="text" /><input name="Intimidation-prof" type="checkbox" />
+              </li>
+          </div>
+
+        </div>
+
+      </section>
+
+<div class="item">
+
+        <section class="attributes">
+        <div class="label">
+              Saving Throws
+           
+          </div>
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Investigation">Investigation <span class="skill">(Int)</span></label><input name="Investigation" placeholder="+0" type="text" /><input name="Investigation-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Medicine">Medicine <span class="skill">(Wis)</span></label><input name="Medicine" placeholder="+0" type="text" /><input name="Medicine-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Nature">Nature <span class="skill">(Int)</span></label><input name="Nature" placeholder="+0" type="text" /><input name="Nature-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Perception">Perception <span class="skill">(Wis)</span></label><input name="Perception" placeholder="+0" type="text" /><input name="Perception-prof" type="checkbox" />
+              </li>
+          </div>
+
+        </div>
+
+      </section>
+
+<div class="item">
+
+        <section class="attributes">
+        <div class="label">
+              Saving Throws
+           
+          </div>
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Performance">Performance <span class="skill">(Cha)</span></label><input name="Performance" placeholder="+0" type="text" /><input name="Performance-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label><input name="Persuasion" placeholder="+0" type="text" /><input name="Persuasion-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Religion">Religion <span class="skill">(Int)</span></label><input name="Religion" placeholder="+0" type="text" /><input name="Religion-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label><input name="Sleight of Hand" placeholder="+0" type="text" /><input name="Sleight of Hand-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Stealth">Stealth <span class="skill">(Dex)</span></label><input name="Stealth" placeholder="+0" type="text" /><input name="Stealth-prof" type="checkbox" />
+              </li>
+              <li>
+                <label for="Survival">Survival <span class="skill">(Wis)</span></label><input name="Survival" placeholder="+0" type="text" /><input name="Survival-prof" type="checkbox" />
+              </li>
+          </div>
+
+        </div>
+      </section>
+
+<div class="item">
+
+        <div class="passive-perception box">
+        <div class="label-container">
+        <li>  <label for="passiveperception">Passive Wisdom (Perception)</label>
+        </li></div>
+        <input name="passiveperception" placeholder="10" />
+      </div>
+      <div class="otherprofs box textblock">
+        <li><label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs"></textarea>
+      </li></div>
+
+          </div>
+
+  
+      </section>
+<div class="item">
+
+        <section class="combat">
+        <div class="armorclass">
+          <div>
+       <li>     <label for="ac">Armor Class</label><input name="ac" placeholder="10" type="text" />
+          </li></div>
+        </div>
+        <div class="initiative">
+          <div>
+            <li><label for="initiative">Initiative</label><input name="initiative" placeholder="+0" type="text" />
+          </li></div>
+        </div>
+        <div class="speed">
+          <div>
+            <li><label for="speed">Speed</label><input name="speed" placeholder="30" type="text" />
+          </li></div>
+        </div>
+        <div class="hp">
+          <div class="regular">
+            <div class="max">
+              <li><label for="maxhp">Hit Point Maximum</label><input name="maxhp" placeholder="10" type="text" />
+            </li></div>
+            <div class="current">
+              <li><label for="currenthp">Current Hit Points</label><input name="currenthp" type="text" />
+            </li></div>
+          </div>
+          <div class="temporary">
+            <li><label for="temphp">Temporary Hit Points</label><input name="temphp" type="text" />
+          </li></div>
+        </div>
+        <div class="hitdice">
+          <div>
+            <div class="total">
+              <li><label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
+            </li></div>
+            <div class="remaining">
+              <li><label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
+            </li></div>
+          </div>
+        </div>
+        <div class="deathsaves">
+          <div>
+            <div class="label">
+              <label>Death Saves</label>
+            </div>
+            <div class="marks">
+              <div class="deathsuccesses">
+                <label>Successes</label>
+                <div class="bubbles">
+                  <input name="deathsuccess1" type="checkbox" />
+                  <input name="deathsuccess2" type="checkbox" />
+                  <input name="deathsuccess3" type="checkbox" />
+                </div>
+              </div>
+              <div class="deathfails">
+                <label>Failures</label>
+                <div class="bubbles">
+                  <input name="deathfail1" type="checkbox" />
+                  <input name="deathfail2" type="checkbox" />
+                  <input name="deathfail3" type="checkbox" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<input type="submit" value="Submit">
+          </div>
+
+  
+      </section>
+
+    <!-- -->
+    </section>
+     
+
+
+
+          <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  // Activate Carousel
+  $("#myCarousel").carousel("pause");
+  // Click on the button to start sliding 
+  $("#myBtn").click(function(){
+    $("#myCarousel").carousel("cycle");
+  });
+  // Click on the button to stop sliding 
+  $("#myBtn2").click(function(){
+    $("#myCarousel").carousel("pause");
+  });
+    
+  // Enable Carousel Indicators
+  $(".item1").click(function(){
+    $("#myCarousel").carousel(0);
+  });
+  $(".item2").click(function(){
+    $("#myCarousel").carousel(1);
+  });
+  $(".item3").click(function(){
+    $("#myCarousel").carousel(2);
+  });
+  $(".item4").click(function(){
+    $("#myCarousel").carousel(3);
+  });
+    
+  // Enable Carousel Controls
+  $(".left").click(function(){
+    $("#myCarousel").carousel("prev");
+  });
+  $(".right").click(function(){
+    $("#myCarousel").carousel("next");
+  });
+});
+
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+</div>
+</body>
+<div class="footer">
+
+  <div class="social-footer-icons">
+<footer class="w3-center w3-red w3-padding-60">
+  <div class="w3-large w3-section">
+  
+<a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+<a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+</div></div></div>
+
+</html>
