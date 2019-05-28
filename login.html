@@ -1,0 +1,176 @@
+﻿<doctype html!>
+<html>
+<head>
+<title>Dungeon and Dragon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/charactercreationstyle.css">
+<div class="header">
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+     &nbsp  <img src="images/pic.png" width = "100" length ="100"  style="margin:10px 0px">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>  ABOUT</a>
+      <a href="charactercreation.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> CHARACTER CREATION</a>
+      <a href="charactersheet.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CHARACTER SHEET</a>
+      <a href="contactus.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
+      <a href="login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-red w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+   <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>  ABOUT</a>
+      <a href="charactercreation.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> CHARACTER CREATION</a>
+      <a href="charactersheet.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CHARACTER SHEET</a>
+      <a href="contactus.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
+      <a href="login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
+
+</nav>
+  
+</header>
+</div>
+<div>
+<body>
+<br>
+<br>
+<div>
+<title>Login </title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<form action="/action_page.php" method="get">
+<h2><b>Login </b></h2> </br>
+<p5><b>Email adress: </b></p5>
+<input type="text" Email adress=""> </br> </br>
+<p6><b>Password: </b></p6>
+<input type="password" > </br>
+<p> 
+</p> </font>
+<input type="Submit" value="Login" > </br> </br></span></p> 
+<p23> Not a member? <a href="register.html"><b>Click to register </b></a> </p23>
+</form>
+<script>
+function checkURL()
+{
+	function getQueryVariable(variable)
+	{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+	}
+ 
+	var message = getQueryVariable("message"); 
+	switch(message)
+	{
+		case "unsuccessful" : 
+		{
+			message = "Internal Server Error. Try Again Later.";
+		}
+		break;
+		case "emailalreadyexists" : 
+		{
+			message = "This Email/Phone Already Exists. Try Different One.";
+		}
+		break;
+		case "passwordmismatch" : 
+		{
+			message = "Password Didn't Match.";
+		}
+		break;
+		case "upwrong" : 
+		{
+			message = "either username or password is wrong.";
+		}
+		break;
+		case "insufficient" : 
+		{
+			message = "Any Of The Field Is Missing";
+		}
+		break;
+		case "unauthorised" : 
+		{
+			message = "You Need To Login First To See This Page.";
+		}
+		break;
+		case "verificationSuccessful" : 
+		{
+			message = "You Have Successfully Verified Your Email Address";
+		}
+		break;
+		case "verificationAlreadyDone" : 
+		{
+			message = "Your already have verified your email address.";
+		}
+		break;
+		
+		case "loginAgainWithNewPassword" :
+		{
+			message = "Login again with new password";
+		}
+		break; 
+		
+		default :
+		{
+			document.getElementById('alert').style.display = "none";
+			message = ""
+		}
+	}
+ 
+	document.getElementById('alert').innerHTML = message;
+}
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script> 
+</body>
+<div class="footer">
+
+  <div class="social-footer-icons">
+<footer class="w3-center w3-red w3-padding-60">
+  <div class="w3-large w3-section">
+  
+<a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+<a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+<a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+</div></div></div>
+</html>
