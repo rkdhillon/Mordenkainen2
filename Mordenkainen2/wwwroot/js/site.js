@@ -122,8 +122,10 @@ $(".container-fluid").on("change", ".sheetObj", function (e) {
         return false;
     }
     var actionUrl = "UpdateCharacterSheet";  // get the form action value
+    var n = $(this).attr("name");
+    var val = $(this).val();
     //ajax post object to server
-    $.post(actionUrl, $(event.target).serialize(), function (res) {
+    $.post(actionUrl, { names: n, value: val }, function (res) {
         //res is the response coming from our ajax call. Use this to update DOM
         $("#viewB").html(res);
     });

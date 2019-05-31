@@ -81,7 +81,17 @@ namespace Mordenkainen2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult CreateCharater(CharacterSheetViewModel sheet)
         {
-            return Ok();//place holder
+            try
+            {
+                bool characterCreated = EFQueries.CreateCharacter(sheet);
+                if (characterCreated)
+                    return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            return BadRequest();//place holder
         }
 
         [HttpGet]

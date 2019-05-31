@@ -116,7 +116,7 @@ namespace Mordenkainen2.Models
         }
 
         //insert new character
-        public bool CreateCharacter(CharacterSheetViewModel sheet)
+        public static bool CreateCharacter(CharacterSheetViewModel sheet)
         {
             try
             {
