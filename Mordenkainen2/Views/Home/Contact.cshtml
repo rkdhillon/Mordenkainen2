@@ -2,7 +2,31 @@
 @{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Me here</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="images/pic.png" style="width:30%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="First Name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Last Name..">
+      
+      <form action="/action_page.php">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="Email Address" placeholder="Email..">
+<p>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
 
 
