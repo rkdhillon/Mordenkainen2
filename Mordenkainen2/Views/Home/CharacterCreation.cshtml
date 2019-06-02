@@ -1,7 +1,72 @@
-﻿
+﻿@model CharacterSheetViewModel
 @{
     ViewData["Title"] = "CharacterCreation";
 }
+<h2>Character Creation</h2>
 <!--Note: need some way to page through multiple blocks of inputs. Ideas: partial views, -->
-<h2>CharacterCreation</h2>
-
+<div class="contrainer">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <form id="reg" asp-controller="Home" asp-action="CreateCharacter" method="post">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.CharacterName" class="control-label formText">Character Name</label>
+                            <input asp-for="CharacterSheet.CharacterName" class="form-control" placeholder="ex. Thoradin Fireforge" />
+                            <label asp-for="CharacterSheet.Class" class="control-label formText">Character Class</label>
+                            <input asp-for="CharacterSheet.Class" class="form-control" placeholder="ex. Paladin" />
+                            <label asp-for="CharacterSheet.CharLevel" class="control-label formText">Character Name</label>
+                            <input asp-for="CharacterSheet.CharLevel" class="form-control" placeholder="ex. 1" />
+                            <label asp-for="CharacterSheet.BackgroundID" class="control-label formText">Background</label>
+                            <select asp-for="CharacterSheet.Background" class="form-control"></select>
+                            <label asp-for="CharacterSheet.Race" class="control-label formText">Race</label>
+                            <input asp-for="CharacterSheet.Race" class="form-control" placeholder="ex. Dwarf" />
+                            <label asp-for="CharacterSheet.AlignmentID" class="control-label formText">Alignment</label>
+                            <select asp-for="CharacterSheet.Alignment" class="form-control"></select>
+                            <label asp-for="CharacterSheet.Experience" class="control-label formText">Experience</label>
+                            <input asp-for="CharacterSheet.Experience" class="form-control" placeholder="ex. 1000" />
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.Strength" class="control-label formText">Strength</label>
+                            <input asp-for="CharacterSheet.Strength" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Dexterity" class="control-label formText">Dexterity</label>
+                            <input asp-for="CharacterSheet.Dexterity" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Constitution" class="control-label formText">Constitution</label>
+                            <input asp-for="CharacterSheet.Constitution" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Wisdom" class="control-label formText">Wisdom</label>
+                            <input asp-for="CharacterSheet.Wisdom" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Intelligence" class="control-label formText">Intellligence</label>
+                            <input asp-for="CharacterSheet.Intelligence" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Charisma" class="control-label formText">Charisma</label>
+                            <input asp-for="CharacterSheet.Charisma" class="form-control" placeholder="ex. 10" />
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  
+                </div>
+            </div>
+        </form>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    </div>
+</div>

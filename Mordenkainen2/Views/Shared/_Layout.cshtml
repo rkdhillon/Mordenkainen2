@@ -6,61 +6,67 @@
     <title>@ViewData["Title"] - Mordenkainen2</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/bootstrap_css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/bootstrap_css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/bootstrap_css/bootstrap-reboot.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/bootstrap_css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/lib/bootstrap/bootstrap_css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/bootstrap_css/bootstrap-reboot.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
     @model LayoutViewModel
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    <div class="container-fluid">
-        <div class="row">
-            <form id="log" asp-controller="Home" asp-action="Login" method="post">
-                <label asp-for="LoginModel.Email" class="control-label"></label>
-                <input asp-for="LoginModel.Email" class="form-control" />
-                <label asp-for="LoginModel.Password" class="control-label"></label>
-                <input asp-for="LoginModel.Password" class="form-control" />
-                <button type="submit" class="btn btn-default">Login</button>
-            </form>
-        </div>
-        <div class="row">
-            <form id="reg" asp-controller="Home" asp-action="Register" method="post">
-                <label asp-for="RegisterModel.Email" class="control-label"></label>
-                <input asp-for="RegisterModel.Email" class="form-control" />
-                <label asp-for="RegisterModel.Password" class="control-label"></label>
-                <input asp-for="RegisterModel.Password" class="form-control" />
-                <label asp-for="RegisterModel.Vpassword" class="control-label"></label>
-                <input asp-for="RegisterModel.Vpassword" class="form-control" />
-                <button type="submit" class="btn btn-default">Login</button>
-            </form>
-        </div>
-    </div>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Mordenkainen2</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-center">
+        <a class="navbar-brand" href="#"><img class="img-fluid logo" src="~/images/pic.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseArea" aria-controls="collapseArea" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between align-items-center w-100" id="collapseArea">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item big_nav-link"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="nav-item big_nav-link"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="CharacterCreation">Character Creation</a></li>
+                <li class="nav-item big_nav-link"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="CharacterSheet">Character Sheet</a></li>
+                <li class="nav-item big_nav-link d-lg-none d-xl-block"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav flex-row justify-content-center flex-nowrap">
+                <li class="nav-item "><button type="button" class="btn btn-danger nav-link" data-toggle="collapse" data-target="#log">Login</button></li>
+                <li class="nav-item "><button type="button" class="btn btn-danger nav-link" data-toggle="collapse" data-target="#reg">Register</button></li>
+            </ul>
+                <div id="log" class="collapse" >
+                    <div class="card-body">
+                        <form class="my-2 my-lg-0" id="log" asp-controller="Home" asp-action="Login" method="post">
+                            <label asp-for="LoginModel.Email" class="control-label formText"></label>
+                            <input asp-for="LoginModel.Email" class="form-control" /><br />
+                            <label asp-for="LoginModel.Password" class="control-label formText"></label>
+                            <input asp-for="LoginModel.Password" class="form-control" />
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="reg" class="collapse">
+                    <form id="reg" asp-controller="Home" asp-action="Register" method="post">
+                        <label asp-for="RegisterModel.Email" class="control-label formText"></label>
+                        <input asp-for="RegisterModel.Email" class="form-control" />
+                        <label asp-for="RegisterModel.Password" class="control-label formText"></label>
+                        <input asp-for="RegisterModel.Password" class="form-control " />
+                        <label asp-for="RegisterModel.Vpassword" class="control-label formText">Confirm</label>
+                        <input asp-for="RegisterModel.Vpassword" class="form-control" />
+                        <button type="submit" class="btn btn-default">Register</button>
+                    </form>
+                </div>
         </div>
     </nav>
+
 
     <partial name="_CookieConsentPartial" />
 
@@ -68,13 +74,21 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - Mordenkainen2</p>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-reddit"></a>
+            <p>&copy; 2019 - Mordenkainen</p>
         </footer>
-    </div>
+</div>
 
     <environment include="Development">
-
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="~/lib/bootstrap/bootstrap_js/bootstrap.bundle.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -84,12 +98,17 @@
                 crossorigin="anonymous"
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                asp-fallback-src=""
                 crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q">
         </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                asp-fallback-src="~lib/bootstrap/bootstrap_js/bootstrap.bundle.js"
+                crossorigin="anonymous"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl">
+        </script>
+
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
